@@ -1,4 +1,4 @@
-<img width="1680" height="1050" alt="Screenshot 2025-08-17 at 12 33 25 am" src="https://github.com/user-attachments/assets/69e5faf9-90d5-42de-a8c3-fcb9ab243141" /><img width="1680" height="1050" alt="Screenshot 2025-08-17 at 12 33 25 am" src="https://github.com/user-attachments/assets/f4f231ca-0420-40eb-be26-94fe090bbb8b" /># Before/After Carousel – Flutter
+# Before/After Carousel – Flutter
 
 A polished, endlessly auto-scrolling carousel of “before/after” image cards with a single global vertical slider that controls the reveal across all cards.
 Each card has one animated label that switches between Before and After based on the slider position.
