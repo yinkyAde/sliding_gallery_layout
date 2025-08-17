@@ -1,16 +1,48 @@
-# slick_before_after
+# Before/After Carousel – Flutter
 
-A new Flutter project.
+A polished, endlessly auto-scrolling carousel of “before/after” image cards with a single global vertical slider that controls the reveal across all cards.
+Each card has one animated label that switches between Before and After based on the slider position.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+# Features
 
-A few resources to get you started if this is your first Flutter project:
+One global slider (divider + handle) across the whole carousel
+Drag anywhere to move it; every card reveals left/right accordingly.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Endless auto-scroll to the left with adjustable speed.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Full-bleed images inside each card with rounded corners.
+
+Single per-card label that cross-fades between “Before” and “After”.
+
+Smooth animations and spacing that matches a typical gallery layout.
+
+No per-card sliders (exactly one slider globally, as requested).
+
+
+
+# How it Works
+
+The carousel is a horizontal ListView.builder that repeats your image pairs.
+
+A global slider is drawn on top with Stack + Positioned.
+Its X-position in the viewport is converted to a local fraction t ∈ [0,1]
+for each card:
+t = (globalX - cardLeftEdge) / cardWidth.
+
+Each card shows:
+
+After image (fills the card).
+
+Before image (clipped to a left-side rectangle based on t).
+
+Bottom label using AnimatedSwitcher to flip text & colors at the midpoint.
+
+
+# Controls
+
+Drag anywhere on the carousel to move the global slider.
+
+Tap to jump the slider to a point.
+
+Auto-scroll runs continuously; adjust autoScrollSpeedPxPerSec as needed.
